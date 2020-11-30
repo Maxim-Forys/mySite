@@ -7,11 +7,13 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <title>DeliveryMarket</title>
+    <link rel="shortcut icon" href="favicon/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="css/normalize.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@700;800;900&family=Rubik:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="css/swiper.min.css" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
@@ -30,14 +32,14 @@
 
         <div class="nav">
           <div class="logo">
-            <a href="#" class="logo-link"
+            <a href="/" class="logo-link"
               ><img src="img/logo.svg" alt="logo"
             /></a>
           </div>
           <div class="nav-menu">
-            <a href="#" class="nav-menu__link">О сервесе</a>
-            <a href="#" class="nav-menu__link">Супермаркеты</a>
-            <a href="#" class="nav-menu__link">Войти в кабинет</a>
+            <a href="#about-us" class="nav-menu__link">О сервесе</a>
+            <a href="#sale" class="nav-menu__link">Супермаркеты</a>
+            <a href="#" class="nav-menu__link open-modal">Войти в кабинет</a>
           </div>
         </div>
         <!-- //nav -->
@@ -50,7 +52,9 @@
               <p class="header-content__subtitle">
                 Первая доставка покупок в подарок до 1 июля
               </p>
-              <a href="#" class="header-content__btn"> Попробовать &#8594;</a>
+              <a href="#" class="header-content__btn open-modal">
+                Попробовать &#8594;</a
+              >
             </div>
             <div class="header-map">
               <p>Отследите свой заказ онлайн на карте</p>
@@ -63,7 +67,7 @@
       </div>
     </header>
 
-    <section class="about-us">
+    <section id="about-us" class="about-us">
       <div class="our-advantage__row">
         <div class="our-advantage">
           <h2 class="our-advantage-title">45</h2>
@@ -88,13 +92,13 @@
       </div>
     </section>
 
-    <section class="sale">
+    <section id="sale" class="sale">
       <div class="container-row">
         <div class="sale__title">
           <h2>Выберите любимый супермаркет</h2>
         </div>
         <div class="sales-block">
-          <a href="" class="sale-link">
+          <a href="#" class="sale-link">
             <div class="sale-block">
               <div class="sale-block__img">
                 <img src="img/azkuka.jpg" alt="azbuka" />
@@ -111,7 +115,7 @@
               </div>
             </div>
           </a>
-          <a href="" class="sale-link">
+          <a href="#" class="sale-link">
             <div class="sale-block">
               <div class="sale-block__img">
                 <img src="img/pieterochka.jpg" alt="azbuka" />
@@ -128,7 +132,7 @@
               </div>
             </div>
           </a>
-          <a href="" class="sale-link">
+          <a href="#" class="sale-link">
             <div class="sale-block">
               <div class="sale-block__img">
                 <img src="img/perekrest.jpg" alt="azbuka" />
@@ -145,7 +149,7 @@
               </div>
             </div>
           </a>
-          <a href="" class="sale-link">
+          <a href="#" class="sale-link">
             <div class="sale-block">
               <div class="sale-block__img">
                 <img src="img/market-da.jpg" alt="azbuka" />
@@ -162,7 +166,7 @@
               </div>
             </div>
           </a>
-          <a href="" class="sale-link">
+          <a href="#" class="sale-link">
             <div class="sale-block">
               <div class="sale-block__img">
                 <img src="img/vkys-vill.jpg" alt="azbuka" />
@@ -179,7 +183,7 @@
               </div>
             </div>
           </a>
-          <a href="" class="sale-link">
+          <a href="#" class="sale-link">
             <div class="sale-block">
               <div class="sale-block__img">
                 <img src="img/billa.jpg" alt="azbuka" />
@@ -196,7 +200,7 @@
               </div>
             </div>
           </a>
-          <a href="" class="sale-link">
+          <a href="#" class="sale-link">
             <div class="sale-block">
               <div class="sale-block__img">
                 <img src="img/lenta.jpg" alt="azbuka" />
@@ -213,7 +217,7 @@
               </div>
             </div>
           </a>
-          <a href="" class="sale-link">
+          <a href="#" class="sale-link">
             <div class="sale-block">
               <div class="sale-block__img">
                 <img src="img/metro.jpg" alt="azbuka" />
@@ -231,7 +235,7 @@
             </div>
           </a>
 
-          <a href="" class="sale-link sale-link__last">
+          <a href="#" class="sale-link sale-link__last">
             <div class="sale-block sale-block__last">
               <div class="sale-block__img">
                 <img src="img/azkuka.jpg" alt="azbuka" />
@@ -270,16 +274,19 @@
               Заказывать продукты стало ещё удобнее! Получите ссылку на
               скачивание по SMS
             </p>
-            <div class="attachment__form">
+            <form class="attachment__form">
               <input
                 type="tel"
                 class="attachment__form-input"
+                id="phone"
                 placeholder="+7 (___) ___-__-__"
               />
-              <button class="header-content__btn attachment__form-btn">
+              <button
+                class="header-content__btn attachment__form-btn open-window"
+              >
                 Получить ссылку &#8594;
               </button>
-            </div>
+            </form>
           </div>
         </div>
       </div>
@@ -289,44 +296,70 @@
       <div class="container">
         <h2 class="reviews__title">Отзывы наших покупателей</h2>
         <div class="reviews__row">
-          <div class="reviews-swaip reviews-swaip__left">
-            <a href="#" class="reviews-swaip__link"
-              ><img src="img/Arrow.png" alt="swaip" class="reviews-swaip__img"
-            /></a>
+          <div class="reviews-swaip reviews-swaip__left swiper-button-prev">
+            <img src="img/Arrow.png" alt="swaip" class="reviews-swaip__img" />
           </div>
-          <div class="reviews__content">
-            <div class="reviews-slider">
-              <div class="reviews-slider__texts">
-                <h3 class="reviews-slider__title">
-                  В 4-ый раз остаюсь довольным
-                </h3>
-                <p class="reviews-slider__subtitle">
-                  Доставляют всегда во время, нареканий нет, товары в прекрасном
-                  качестве, среди многих аналогичных сервисов предпочтение отдаю
-                  только Деливери-Маркет, остальные разочаровали по многим
-                  пунктам.
-                </p>
-              </div>
-              <div class="reviews-slider-autor">
-                <div class="autor__avatar">
-                  <img src="img/avatar-autor.png" alt="autor" />
+
+          <div class="reviews__content swiper-container">
+            <div class="reviews-slider swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="reviews-slider__texts">
+                  <h3 class="reviews-slider__title">
+                    В 4-ый раз остаюсь довольным
+                  </h3>
+                  <p class="reviews-slider__subtitle">
+                    Доставляют всегда во время, нареканий нет, товары в
+                    прекрасном качестве, среди многих аналогичных сервисов
+                    предпочтение отдаю только Деливери-Маркет, остальные
+                    разочаровали по многим пунктам.
+                  </p>
                 </div>
-                <div class="autor__nickname">
-                  <p class="autor__nickname-p">Никита Владимирович</p>
-                  <div class="autor__link">
-                    <a href="#">https://vk.com/nekit.prof</a>
+                <div class="reviews-slider-autor">
+                  <div class="autor__avatar">
+                    <img src="img/avatar-autor.png" alt="autor" />
+                  </div>
+                  <div class="autor__nickname">
+                    <p class="autor__nickname-p">Никита Владимирович</p>
+                    <div class="autor__link">
+                      <a href="#">https://vk.com/nekit.prof</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="reviews-slider__texts">
+                  <h3 class="reviews-slider__title">
+                    В 4-ый раз остаюсь довольным
+                  </h3>
+                  <p class="reviews-slider__subtitle">
+                    Доставляют всегда во время, нареканий нет, товары в
+                    прекрасном качестве, среди многих аналогичных сервисов
+                    предпочтение отдаю только Деливери-Маркет, остальные
+                    разочаровали по многим пунктам.
+                  </p>
+                </div>
+                <div class="reviews-slider-autor">
+                  <div class="autor__avatar">
+                    <img src="img/avatar-autor.png" alt="autor" />
+                  </div>
+                  <div class="autor__nickname">
+                    <p class="autor__nickname-p">Никита Владимирович</p>
+                    <div class="autor__link">
+                      <a href="#">https://vk.com/nekit.prof</a>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="reviews-swaip reviews-swaip__right">
-            <a href="#" class="reviews-swaip__link"
-              ><img
-                src="img/right-swaip.png"
-                alt="swaip"
-                class="reviews-swaip__img"
-            /></a>
+
+          <div class="reviews-swaip reviews-swaip__right swiper-button-next">
+            <img
+              src="img/right-swaip.png"
+              alt="swaip"
+              class="reviews-swaip__img"
+            />
           </div>
         </div>
       </div>
@@ -362,7 +395,9 @@
           </div>
           <div class="footer-download-app">
             <div class="footer-download-app__title">Скачайте приложение</div>
-            <a href="#" class="download-app__link"
+            <a
+              href="https://apps.apple.com/ru/app/market-delivery-%D0%B4%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%BA%D0%B0-%D0%B5%D0%B4%D1%8B/id1442683218"
+              class="download-app__link"
               ><img
                 src="img/appStore.svg"
                 alt="download"
@@ -379,6 +414,35 @@
       </div>
     </footer>
 
+    <!--//Popups-->
+    <div class="modal">
+      <div class="modal__overlay"></div>
+      <div class="modal__content">
+        <h3 class="modal__title">Это тестовый макет проэкта!</h3>
+        <p>
+          Дизайн события, которое бы произошло по клику на этот элемент, не был
+          предоставлен дизайнером. Данный проэкт завершен.
+        </p>
+        <h3 class="offer-modal">
+          Нужно сверстать сайт? Тогда кликай по ссылке ниже!
+        </h3>
+        <a class="modal__contact" href="https://www.instagram.com/maxim_forys/"
+          >Instagram: @maxim_forys</a
+        >
+        <button class="modal__close">
+          <img src="img/close.svg" alt="close" class="modal__close-img" />
+        </button>
+      </div>
+    </div>
+    <!-- // -->
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/jquery.maskedinput.min.js"></script>
+    <script src="js/swiper.min.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>
