@@ -107,7 +107,6 @@ const slider = document.querySelector('.swiper-container');
 
 let mySwiper = new Swiper(slider, {
   loop: true,
-  speed: 850,
 	navigation: {
 		nextEl: '.swiper-button-next',
 		prevEl: '.swiper-button-prev',
